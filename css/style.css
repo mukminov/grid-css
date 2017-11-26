@@ -26,12 +26,54 @@ body{
 	height: 140px;
 }
 
+.search{
+	display: grid;
+	grid-template-columns: repeat(6,[col] 1fr);
+	grid-template-rows: 3fr;
+	background: #0026FF;
+	height: 100px;
+}
+.search p{
+	display: grid;
+	grid-column: col 2 / col 3;
+	margin: 5px;
+	align-self: center;
+	text-align: right;
+	color: #FFFFFF;
+}
+
+#search{
+	display: grid;
+	grid-column: col 3 / col 5;
+    align-self: center;
+    height: 30px;
+    border-radius: 5px;
+    margin: 5px;
+
+}
+
+#submit{
+	display: grid;
+	grid-column: col 5;
+    align-self: center;
+    width: 60px;
+    height: 30px;
+    border-radius: 5px;
+    border:   1px solid black;
+    margin: 5px;
+}
+
+#submit:hover{
+    background: #FF6A00;
+	color: #FFFFFF;
+	cursor:pointer;
+}
+
 .main-grid_960{
 	display:grid;
 	max-width: 960px;
     margin: 0 auto;
 	border: 1px solid black;
-
 }
 
 .grid{
@@ -66,7 +108,7 @@ body{
 .grid-item{
  	display: grid;
  	min-height: 100px;
- 	border: 2px solid #1B35E3;
+ 	border: 2px solid #0094FF;
 }
 
 .grid-item1{
@@ -360,13 +402,13 @@ input{
 }
 
 .topbutton {
-width:50px;
+width:20px;
 border:2px solid #017;
 background:#FFFFFF;
 text-align:center;
 padding:10px;
 position:fixed;
-bottom:60px;
+bottom:100px;
 right:50px;
 cursor:pointer;
 color:#333;
@@ -377,6 +419,6 @@ border-radius: 5px;
 }
 
 .topbutton:hover{
-	background: #4800FF;
+	background: #FFFFCB;
 	color: #FFFFFF;
 }

@@ -1,0 +1,382 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+
+body{
+	background-image: url(../img/body.jpg);
+	background-size:  100% 100%;
+}
+
+.wrapper{
+	display: grid;
+	width: 100%;
+	height: 100%;
+	margin: 0 auto;
+}
+
+.header-grid_960{
+	display: grid;
+	grid-template-columns: 1fr 5fr;
+	grid-template-rows: 1fr;
+	justify-content: center;
+	max-width: 960px;
+    margin: 0 auto;
+	border: 1px solid black;
+	height: 140px;
+}
+
+.main-grid_960{
+	display:grid;
+	max-width: 960px;
+    margin: 0 auto;
+	border: 1px solid black;
+
+}
+
+.grid{
+	display: grid;
+	grid-template-columns: repeat(6,[col] 1fr);
+	grid-template-rows: repeat(3,[row] 1fr);
+}
+
+.header{
+	display: grid;
+	background-color: #1025EE;
+	opacity: 0.8;
+	border: 1px solid black;
+	height: 140px;
+}
+
+.header-logo{
+	display: grid;
+	margin-right: 15px;
+}
+
+.header-nav{
+	display: grid;
+    align-items: center;
+	justify-items:center;
+}
+
+.nav__link{
+	margin: 10px;
+}
+
+.grid-item{
+ 	display: grid;
+ 	min-height: 100px;
+ 	border: 2px solid #1B35E3;
+}
+
+.grid-item1{
+	grid-column:span 2;
+	grid-row:  row 1 / row 2;
+	background-image: url(../img/9.jpg);
+	background-size:  100% 100%;
+	text-align:center;
+	align-items: center;
+	color: #ffffff;
+}
+
+.grid-item2{
+	background: blue;
+	background-image: url(../img/2.jpg);
+	background-size:  100% 100%;
+	grid-column: col 3 /col  5;
+    grid-row: row 1 / row 3;
+    text-align: center;
+    align-items: center;
+    color: #ffffff;
+ }
+
+.grid-item3{
+	background:  pink;
+	grid-column: col 5 / col 6;
+	grid-row: row 1 / row 3;
+}
+
+.grid-item9{
+	background:  green;
+	grid-column: col 2 / col 4;
+}
+
+.grid-item10{
+	background: #31CDC4;
+	grid-column: col 4 / col 6;
+}
+
+.grid-item11{
+	background:  green;
+	grid-column: col 6 ;
+}
+
+.grid2{
+	display:grid;
+	grid-template-columns: repeat(6,[col] 1fr);
+	grid-template-rows: repeat(4,[row] 1fr);
+	border: 1px solid black;
+	background-image: url(../img/fon.jpg);
+	background-size:  100% 100%;
+}
+
+.grid-item12{
+    display: grid;
+    grid-column: col 1 / col 7;
+    grid-row: row 1 ;
+    padding: 15px;
+	
+}
+
+.icon{
+	grid-column:  col 7;
+	grid-row: row 2 / row 3;
+	width: 100px;
+	height: 100px;
+}
+
+.info{
+	display: grid;
+    grid-column: col 1 / col 3;
+    grid-row: row 3 / row 4;
+    padding: 15px;
+}
+
+.carousel{
+	display: grid;
+	grid-template-rows: 500px;
+	align-items: center;
+	border: 1px solid black;
+	background-color: #1025EE;
+}
+
+#slider { /*положение слайдера*/
+	display: grid;
+    position: relative;
+    justify-items:  center;
+	text-align: center;
+   
+}
+
+#slider{ /*центровка слайдера*/
+	margin: 0 auto;
+}
+
+#slides article{ /*все изображения справа друг от доруга*/
+	width: 20%;
+	float: left;
+}
+
+#slides .image{ /*устанавливает общий размер блока с изображениями*/
+	width: 500%;
+	line-height: 0;
+}
+
+#overflow{ /*сркывает все, что находится за пределами этого блока*/
+	width: 100%;
+	overflow: hidden;
+}
+
+article img{ /*размер изображений слайдера*/
+	width: 100%;
+	height: 300px;
+}
+
+#desktop:checked ~ #slider{ /*размер всего слайдера*/
+	max-width: 480px; /*максимальная длинна*/
+
+}
+
+#active{
+	display: grid;
+}
+
+/*настройка переключения и положения для левой стрелки*/
+/*если свич1-5 активны, то идет обращение к лейблу из блока с id контролс*/
+#switch1:checked ~ #controls label:nth-child(5), 
+#switch2:checked ~ #controls label:nth-child(1),
+#switch3:checked ~ #controls label:nth-child(2),
+#switch4:checked ~ #controls label:nth-child(3),
+#switch5:checked ~ #controls label:nth-child(4){
+	background: url('../img/prev.png') no-repeat; /*заливка фона картинкой без повторений*/
+	float: left;
+	margin: 0 0 0 0; /*сдвиг влево*/
+	display: block;
+	height: 70px;
+	width: 70px;
+}
+
+/*настройка переключения и положения для правой стрелки*/
+#switch1:checked ~ #controls label:nth-child(2), 
+#switch2:checked ~ #controls label:nth-child(3),
+#switch3:checked ~ #controls label:nth-child(4),
+#switch4:checked ~ #controls label:nth-child(5),
+#switch5:checked ~ #controls label:nth-child(1){
+	background: url('../img/next.png') no-repeat; /*заливка фона картинкой без повторений*/
+	float: right;
+	margin: 0 0 0 0; /*сдвиг вправо*/
+	display: block;
+	height: 70px;
+	width: 70px;
+}
+
+label, a{ /*при наведении на стрелки или переключатели - курсор изменится*/
+	cursor: pointer;
+}
+
+
+.carousel input{ /*скрывает стандартные инпуты (чекбоксы) на странице*/
+	display: none;
+}
+
+/*позиция изображения при активации переключателя*/
+#switch1:checked ~ #slides .image{
+	margin-left: 0;
+}
+
+#switch2:checked ~ #slides .image{
+	margin-left: -100%;
+}
+
+#switch3:checked ~ #slides .image{
+	margin-left: -200%;
+}
+
+#switch4:checked ~ #slides .image{
+	margin-left: -300%;
+}
+
+#switch5:checked ~ #slides .image{
+	margin-left: -400%;
+}
+
+#controls{ /*положение блока всех управляющих элементов*/
+	margin: 5% 5% 0% 5%;
+	width: 100%;
+	height: 50px;
+}
+
+#active label{ /*стиль отдельного переключателя*/
+	border-radius: 10px; /*скругление углов*/
+	display: inline-block; /*расположение в строку*/
+	width: 10px;
+	height: 10px;
+	background: #bbb;
+}
+
+#active{ /*расположение блока с переключателями*/
+	margin: 5% 0 0;
+	text-align: center;
+	display: none;
+}
+
+#active label:hover{ /*поведение чекбокса при наведении*/
+	background: #76c8ff;
+	border-color: #777 !important; /*выполнение в любом случае*/
+}
+
+/*цвет активного лейбла при активации чекбокса*/
+#switch1:checked ~ #active label:nth-child(1),
+#switch2:checked ~ #active label:nth-child(2),
+#switch3:checked ~ #active label:nth-child(3),
+#switch4:checked ~ #active label:nth-child(4),
+#switch5:checked ~ #active label:nth-child(5){
+	background: #18a3dd;
+	border-color: #18a3dd !important;
+}
+
+#slides .image{ /*анимация пролистывания изображений*/
+	transition: all 600ms cubic-bezier(0.770, 0.000, 0.175, 1.000);
+}
+
+#controls label:hover{ /*прозрачность стрелок при наведении*/
+	opacity: 0.6;
+}
+
+#controls label{ /*прозрачность стрелок при отводе курсора*/
+	transition: opacity 0.2s ease-out;
+}
+
+.footer{
+	background-color: #1025EE;
+	opacity: 0.9;
+	border: 1px solid black;
+}
+
+.footer-grid_960{
+  display: grid;
+  grid-template-columns: 1fr 3fr 1fr 1fr;
+  grid-template-rows: 1fr;
+  max-width: 960px;
+  margin: 0 auto;
+  border: 1px solid black;
+  height: 140px;
+}
+
+.footer-nav{
+  display: grid;
+  align-items: center;
+  justify-items:center;
+}
+
+.footer-logo{
+  display: grid;
+  margin-right: 15px;
+}
+
+.email{
+  margin: 0px  5px 0px 10px;
+  align-self: center;
+}
+
+.footer-social{
+  align-self: center;
+  padding-left: 5px;
+}
+
+.nav__link_last{
+	margin-right: 0px; 
+}
+
+img{
+	width: 100%;
+	height: 100%;
+	vertical-align: bottom;
+}
+
+.social__icons {
+  margin: 5px 5px;
+  width: 24px;
+  height: 24px;
+}
+
+a{
+	text-decoration: none;
+	color: #FFFFFF;
+}
+
+input{
+	display: none;
+}
+
+.topbutton {
+width:50px;
+border:2px solid #017;
+background:#FFFFFF;
+text-align:center;
+padding:10px;
+position:fixed;
+bottom:60px;
+right:50px;
+cursor:pointer;
+color:#333;
+font-family:verdana;
+font-size:12px;
+border-radius: 5px;
+
+}
+
+.topbutton:hover{
+	background: #4800FF;
+	color: #FFFFFF;
+}
